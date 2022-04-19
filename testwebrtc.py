@@ -9,10 +9,11 @@ from app_files import calc_landmark_list, draw_info_text, draw_landmarks, get_ar
 
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, RTCConfiguration, VideoProcessorBase, WebRtcMode
 
-st.title("Real Time Sign Language Translator")
-st.text("Developed by Team - x")
 
-#st.set_page_config(page_title="Talku+", page_icon="🤖")
+
+st.title("My first Streamlit app")
+st.write("Hello, world")
+
 
 class VideoProcessor:
     def recv(self, frame):
@@ -67,13 +68,9 @@ class VideoProcessor:
                     debug_image,
                     handedness,
                     keypoint_classifier_labels[hand_sign_id])
-        global pred
-        pred = keypoint_classifier_labels[hand_sign_id]
+                print(keypoint_classifier_labels[hand_sign_id])
 
         return av.VideoFrame.from_ndarray(debug_image, format="bgr24")
 
-col1,col2 = st.columns((2,1))
-with col1:
-    webrtc_streamer(key="example", video_processor_factory=VideoProcessor)
-with col2:
-    st.header(f"Predicted Letter is : {pred}")
+
+webrtc_streamer(key="example", video_processor_factory=VideoProcessor)
