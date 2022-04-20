@@ -1,9 +1,9 @@
 from keras.models import load_model
 from sklearn.metrics import classification_report, confusion_matrix
-import pickle
 import numpy as np
 import time
 import matplotlib.pyplot as plt
+import pickle
 
 
 def plot_confusion_matrix(cm,
@@ -43,6 +43,7 @@ def plot_confusion_matrix(cm,
     http://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html
 
     """
+    
     import itertools
 
     accuracy = np.trace(cm) / float(np.sum(cm))
