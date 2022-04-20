@@ -95,6 +95,7 @@ for pred_probab in pred_probabs:
 
 cm = confusion_matrix(y_test, np.array(pred_labels))
 
+
 classification_report = classification_report(y_test, np.array(pred_labels))
 print('\n\nClassification Report')
 print('---------------------------')

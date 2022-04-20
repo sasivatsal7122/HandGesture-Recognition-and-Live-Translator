@@ -46,9 +46,6 @@ def main():
         image.flags.writeable = False
         results = hands.process(image)
         image.flags.writeable = True
-        # cv.imshow("results",results)
-        # print(type(results))
-        # print(results)
 
         if results.multi_hand_landmarks is not None:
             for hand_landmarks in results.multi_hand_landmarks :                               
