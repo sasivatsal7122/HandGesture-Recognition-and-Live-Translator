@@ -2,6 +2,7 @@ import copy
 import itertools
 
 def pre_process_landmark(landmark_list):
+    
     temp_landmark_list = copy.deepcopy(landmark_list)
 
     base_x, base_y = 0, 0

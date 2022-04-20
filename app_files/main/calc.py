@@ -3,7 +3,6 @@ import cv2 as cv
 
 def calc_landmark_list(image, landmarks):
     image_width, image_height = image.shape[1], image.shape[0]
-
     landmark_point = []
 
     for _, landmark in enumerate(landmarks.landmark):
