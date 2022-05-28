@@ -1,0 +1,9 @@
+av
+joblib
+mediapipe
+numpy
+opencv_python
+pandas
+scikit_learn
+streamlit
+streamlit_webrtc
