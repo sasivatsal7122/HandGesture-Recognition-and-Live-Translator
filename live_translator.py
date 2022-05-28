@@ -19,14 +19,17 @@ from sklearn.model_selection import train_test_split
 # classifier = joblib.load('Trained_models/decisiontree.pkl')
 classifier = joblib.load('Trained_models/randomforest.pkl')
 
+""" Loading Pre-Trained Scaler to normalize the input values """
 
-dataset = pd.read_csv('mcoords_damta.csv')
-X_split = dataset.iloc[:, 1:].values
-Y_split = dataset.iloc[:, 0].values
-X_train, X_test, y_train, y_test = train_test_split(X_split, Y_split, test_size=0.33)
-scaler = StandardScaler().fit(X_train)
+# dataset = pd.read_csv('mcoords_damta.csv')
+# X_split = dataset.iloc[:, 1:].values
+# Y_split = dataset.iloc[:, 0].values
+# X_train, X_test, y_train, y_test = train_test_split(X_split, Y_split, test_size=0.33)
+# scaler = StandardScaler().fit(X_train)
 
+scaler = joblib.load('Trained_models/StandardScaler.pkl')
 
+# Making the model to make landmarks using built-in mediapipe hand model
 
 exo_landmark = mp.solutions.drawing_utils
 exo_landmark_hands = mp.solutions.hands
@@ -36,7 +39,7 @@ model = exo_landmark_hands.Hands(
     min_detection_confidence=0.5,
     min_tracking_confidence=0.5)
 
-
+# taking webcam input
 cap = cv2.VideoCapture(0)
 
 while cap.isOpened():
