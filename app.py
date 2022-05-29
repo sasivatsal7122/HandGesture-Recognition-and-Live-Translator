@@ -24,7 +24,7 @@ st.text("Developed by Team - x")
 
 
 
-class VideoProcessor:
+class VideoProcessor(VideoProcessorBase):
     def recv(self, frame):
         
         image = frame.to_ndarray(format="bgr24")

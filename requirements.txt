@@ -7,3 +7,5 @@ pandas
 scikit-learn
 streamlit
 streamlit-webrtc
+aiortc
+streamlit opencv-python
