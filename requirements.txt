@@ -2,8 +2,8 @@ av
 joblib
 mediapipe
 numpy
-opencv_python
+opencv-python-headless
 pandas
-scikit_learn
+scikit-learn
 streamlit
-streamlit_webrtc
+streamlit-webrtc
