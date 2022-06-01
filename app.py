@@ -1,12 +1,12 @@
 import joblib
 import streamlit as st
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, RTCConfiguration, VideoProcessorBase, WebRtcMode
+
 import av
 import copy
-
-import cv2
 import numpy as np
 import mediapipe as mp
+import cv2
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
